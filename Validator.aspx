@@ -2,12 +2,25 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Untitled Page</title>
+
+    <!-- Client Side Validation to check for empty values -->
+    <script type="text/javascript">
+        function ClientValidateAtleastOne(source, args) {
+            var regionVal = document.getElementById("<%=txtRegion.ClientID %>").value;
+            var stateVal = document.getElementById("<%=drpState.ClientID %>").value
+            if (regionVal == "" && stateVal == "") {
+                args.IsValid = false;
+            }
+            else {
+                args.IsValid = true;
+            }
+        };
+    </script>
 </head>
 <body>
-
 <p><b><font color=red>Please put your work on these placeholder pages and use code-behind class files so we can see your code (please don't compile into DLL files):</font></b><br />
 
 
@@ -27,6 +40,10 @@ Please perform validation on the server and please make sure that Javascript (cl
 </p>
 
     <form id="form1" runat="server">
+    <div>
+    <asp:CustomValidator ID="cstvAtleastOne" runat="server" ErrorMessage="State or Region Required" onservervalidate="cstvAtleastOne_ServerValidate" ClientValidationFunction="ClientValidateAtleastOne">
+    </asp:CustomValidator> 
+    </div>
     <div>
 
 <asp:DropDownList ID="drpState"  runat="server" CausesValidation="True">

@@ -14,10 +14,10 @@
     <a href="/">&laquo; Back To Home</a>
 
 <p>Please display the Hotel Name, Airport Code, and Address for the hotel with the ID of 105304 using this web service:
-<br>http://ws-design.idevdesign.net/hotels.asmx?op=GetHotel
+<br>http://ws.design.americaneagle.com/hotels.asmx?op=GetHotel
 
 <p>This link gives more details related to this web service:
-<br>http://ws-design.idevdesign.net/docs/hotels.html
+<br>http://ws.design.americaneagle.com/docs/hotels.html
 
 <p>You will need the following credentials to access the web service:
 
@@ -29,6 +29,11 @@
 
     <form id="main" runat="server">
     <div>
+        <b><p>The Hotel data for Hotel Id 105304 is as follows:</p></b>
+        <asp:Label ID="lblHotelId" runat="server" Text=""></asp:Label><br />
+        <asp:Label ID="lblHotelName" runat="server" Text=""></asp:Label><br />
+        <asp:Label ID="lblAirportCode" runat="server" Text=""></asp:Label><br />
+        <asp:Label ID="lblAddress" runat="server" Text=""></asp:Label>
     </div>
     </form>
 </body>

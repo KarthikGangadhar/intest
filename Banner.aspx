@@ -20,7 +20,12 @@
        </p>
 
 
-<p>Please bind the result to the gridview and display this gridview below</p>
+<b><p>Total Impressions and ClickCount since 11/21/2006 per Banner are as follows:</p></b>
+
+<asp:GridView ID="grdBannerData" runat="server">
+</asp:GridView>
+           
+<asp:Label ID="lblException" runat="server" Text=""></asp:Label>
 
 <p><b>Banner</b> table<br><img src="table1.gif"></p>
 

@@ -15,4 +15,13 @@ public partial class Validator : System.Web.UI.Page
     {
 
     }
+
+    //Server side validation to check for empty values
+    protected void cstvAtleastOne_ServerValidate(object source, ServerValidateEventArgs args)
+    {
+        if (string.IsNullOrEmpty(drpState.SelectedValue) && string.IsNullOrEmpty(txtRegion.Text.ToString()))
+        {
+            args.IsValid = false;
+        }
+    }
 }
